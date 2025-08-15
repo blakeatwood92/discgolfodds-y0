@@ -15,98 +15,137 @@ export default function OddsPageClient() {
   const [selectedEvent, setSelectedEvent] = useState("all")
   const [selectedDate, setSelectedDate] = useState("all")
 
-  // Mock data - in real implementation, this would come from Coolbet API
   const tournaments = [
     {
       id: 1,
-      name: "DGPT Championship",
-      location: "Charlotte, NC",
-      date: "2024-10-24",
-      status: "upcoming",
+      name: "Discraft's Ledgestone Open",
+      location: "Peoria, IL",
+      date: "2025-08-17",
+      status: "live",
       rounds: 4,
+      currentRound: 3,
     },
     {
       id: 2,
-      name: "MVP Open",
-      location: "Maple Hill, MA",
-      date: "2024-11-15",
+      name: "LWS Open at Idlewild",
+      location: "Burlington, KY",
+      date: "2025-08-24",
       status: "upcoming",
       rounds: 3,
     },
     {
       id: 3,
-      name: "Las Vegas Challenge",
-      location: "Las Vegas, NV",
-      date: "2024-12-05",
-      status: "live",
+      name: "Discraft Great Lakes Open",
+      location: "Milford, MI",
+      date: "2025-09-07",
+      status: "upcoming",
       rounds: 4,
-      currentRound: 2,
+    },
+    {
+      id: 4,
+      name: "Green Mountain Championship",
+      location: "Jeffersonville, VT",
+      date: "2025-09-21",
+      status: "upcoming",
+      rounds: 4,
+    },
+    {
+      id: 5,
+      name: "MVP Open",
+      location: "Leicester, MA",
+      date: "2025-09-28",
+      status: "upcoming",
+      rounds: 3,
+    },
+    {
+      id: 6,
+      name: "US Disc Golf Championship",
+      location: "Rock Hill, SC",
+      date: "2025-10-12",
+      status: "upcoming",
+      rounds: 4,
     },
   ]
 
   const outrightOdds = [
     {
       player: "Paul McBeth",
-      odds: "+250",
-      decimal: "3.50",
-      movement: "up",
-      change: "+25",
-      tournament: "DGPT Championship",
-    },
-    {
-      player: "Ricky Wysocki",
-      odds: "+300",
-      decimal: "4.00",
-      movement: "down",
-      change: "-50",
-      tournament: "DGPT Championship",
-    },
-    {
-      player: "Calvin Heimburg",
-      odds: "+400",
-      decimal: "5.00",
-      movement: "up",
-      change: "+100",
-      tournament: "DGPT Championship",
-    },
-    {
-      player: "Eagle McMahon",
-      odds: "+500",
-      decimal: "6.00",
-      movement: "stable",
-      change: "0",
-      tournament: "DGPT Championship",
-    },
-    {
-      player: "Simon Lizotte",
-      odds: "+600",
-      decimal: "7.00",
-      movement: "up",
-      change: "+50",
-      tournament: "DGPT Championship",
-    },
-    {
-      player: "Paige Pierce",
-      odds: "+180",
-      decimal: "2.80",
-      movement: "down",
-      change: "-20",
-      tournament: "MVP Open",
-    },
-    {
-      player: "Catrina Allen",
       odds: "+220",
       decimal: "3.20",
       movement: "up",
-      change: "+30",
-      tournament: "MVP Open",
+      change: "+20",
+      tournament: "Discraft's Ledgestone Open",
+    },
+    {
+      player: "Ricky Wysocki",
+      odds: "+280",
+      decimal: "3.80",
+      movement: "down",
+      change: "-30",
+      tournament: "Discraft's Ledgestone Open",
+    },
+    {
+      player: "Calvin Heimburg",
+      odds: "+350",
+      decimal: "4.50",
+      movement: "up",
+      change: "+50",
+      tournament: "Discraft's Ledgestone Open",
+    },
+    {
+      player: "Eagle McMahon",
+      odds: "+450",
+      decimal: "5.50",
+      movement: "stable",
+      change: "0",
+      tournament: "Discraft's Ledgestone Open",
+    },
+    {
+      player: "Simon Lizotte",
+      odds: "+550",
+      decimal: "6.50",
+      movement: "up",
+      change: "+100",
+      tournament: "LWS Open at Idlewild",
+    },
+    {
+      player: "Gannon Buhr",
+      odds: "+600",
+      decimal: "7.00",
+      movement: "down",
+      change: "-50",
+      tournament: "LWS Open at Idlewild",
+    },
+    {
+      player: "Paige Pierce",
+      odds: "+160",
+      decimal: "2.60",
+      movement: "down",
+      change: "-20",
+      tournament: "Green Mountain Championship",
+    },
+    {
+      player: "Catrina Allen",
+      odds: "+200",
+      decimal: "3.00",
+      movement: "up",
+      change: "+25",
+      tournament: "Green Mountain Championship",
     },
     {
       player: "Kristin Tattar",
-      odds: "+250",
-      decimal: "3.50",
+      odds: "+240",
+      decimal: "3.40",
       movement: "stable",
       change: "0",
+      tournament: "MVP Open",
+    },
+    {
+      player: "Eveliina Salonen",
+      odds: "+320",
+      decimal: "4.20",
+      movement: "up",
+      change: "+40",
       tournament: "MVP Open",
     },
   ]
@@ -114,44 +153,57 @@ export default function OddsPageClient() {
   const matchups = [
     {
       player1: "Paul McBeth",
-      player1Odds: "-110",
+      player1Odds: "-105",
       player2: "Ricky Wysocki",
-      player2Odds: "-110",
-      tournament: "DGPT Championship",
+      player2Odds: "-115",
+      tournament: "Discraft's Ledgestone Open",
     },
     {
       player1: "Calvin Heimburg",
-      player1Odds: "+120",
+      player1Odds: "+110",
       player2: "Eagle McMahon",
-      player2Odds: "-140",
-      tournament: "DGPT Championship",
+      player2Odds: "-130",
+      tournament: "LWS Open at Idlewild",
     },
     {
       player1: "Paige Pierce",
-      player1Odds: "-150",
+      player1Odds: "-140",
       player2: "Catrina Allen",
-      player2Odds: "+130",
-      tournament: "MVP Open",
+      player2Odds: "+120",
+      tournament: "Green Mountain Championship",
+    },
+    {
+      player1: "Simon Lizotte",
+      player1Odds: "+105",
+      player2: "Gannon Buhr",
+      player2Odds: "-125",
+      tournament: "LWS Open at Idlewild",
     },
   ]
 
   const propBets = [
     {
-      market: "Will there be an ace in Round 1?",
-      yes: "+150",
-      no: "-180",
-      tournament: "DGPT Championship",
+      market: "Will there be an ace in Round 3?",
+      yes: "+140",
+      no: "-170",
+      tournament: "Discraft's Ledgestone Open",
     },
     {
-      market: "Lowest Round Score",
-      over: "Under 58.5 (-110)",
-      under: "Over 58.5 (-110)",
-      tournament: "DGPT Championship",
+      market: "Lowest Round Score at Idlewild",
+      over: "Under 55.5 (-120)",
+      under: "Over 55.5 (+100)",
+      tournament: "LWS Open at Idlewild",
     },
     {
       market: "Total Aces in Tournament",
-      over: "Over 2.5 (+120)",
-      under: "Under 2.5 (-140)",
+      over: "Over 3.5 (+110)",
+      under: "Under 3.5 (-130)",
+      tournament: "Green Mountain Championship",
+    },
+    {
+      market: "Will Paul McBeth make the final card?",
+      yes: "-200",
+      no: "+170",
       tournament: "MVP Open",
     },
   ]
@@ -204,12 +256,12 @@ export default function OddsPageClient() {
               <div className="flex items-center">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse mr-3"></div>
                 <span className="font-serif text-sm">
-                  <strong>Live:</strong> Las Vegas Challenge - Round 2 in progress
+                  <strong>Live:</strong> Discraft's Ledgestone Open - Round 3 in progress
                 </span>
               </div>
               <Badge variant="secondary" className="font-serif">
                 <Clock className="h-3 w-3 mr-1" />
-                Updated 2 min ago
+                Updated 1 min ago
               </Badge>
             </div>
           </CardContent>
@@ -240,9 +292,12 @@ export default function OddsPageClient() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">All Tournaments</SelectItem>
-                  <SelectItem value="DGPT Championship">DGPT Championship</SelectItem>
+                  <SelectItem value="Discraft's Ledgestone Open">Discraft's Ledgestone Open</SelectItem>
+                  <SelectItem value="LWS Open at Idlewild">LWS Open at Idlewild</SelectItem>
+                  <SelectItem value="Discraft Great Lakes Open">Discraft Great Lakes Open</SelectItem>
+                  <SelectItem value="Green Mountain Championship">Green Mountain Championship</SelectItem>
                   <SelectItem value="MVP Open">MVP Open</SelectItem>
-                  <SelectItem value="Las Vegas Challenge">Las Vegas Challenge</SelectItem>
+                  <SelectItem value="US Disc Golf Championship">US Disc Golf Championship</SelectItem>
                 </SelectContent>
               </Select>
               <Select value={selectedDate} onValueChange={setSelectedDate}>
@@ -414,23 +469,23 @@ export default function OddsPageClient() {
               {[
                 {
                   player: "Paul McBeth",
-                  tournament: "DGPT Championship",
-                  time: "2 hours ago",
-                  change: "+250 → +275",
-                  direction: "up",
+                  tournament: "Discraft's Ledgestone Open",
+                  time: "1 hour ago",
+                  change: "+200 → +220",
+                  direction: "down",
                 },
                 {
-                  player: "Ricky Wysocki",
-                  tournament: "DGPT Championship",
-                  time: "4 hours ago",
-                  change: "+250 → +300",
+                  player: "Calvin Heimburg",
+                  tournament: "LWS Open at Idlewild",
+                  time: "3 hours ago",
+                  change: "+300 → +350",
                   direction: "down",
                 },
                 {
                   player: "Paige Pierce",
-                  tournament: "MVP Open",
-                  time: "6 hours ago",
-                  change: "+200 → +180",
+                  tournament: "Green Mountain Championship",
+                  time: "5 hours ago",
+                  change: "+180 → +160",
                   direction: "up",
                 },
               ].map((movement, index) => (

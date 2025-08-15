@@ -3,7 +3,8 @@ import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { CalendarDays, Clock, TrendingUp } from "lucide-react"
+import { CalendarDays, Clock, TrendingUp, Rss } from "lucide-react"
+import { LiveNewsSection } from "./live-news-section"
 
 export const metadata: Metadata = {
   title: "Disc Golf Betting News & Updates | DiscGolfOdds.com",
@@ -95,11 +96,46 @@ export default function NewsPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <nav className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border sticky top-0 z-50">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            <Link href="/" className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                <span className="text-primary-foreground font-bold text-sm">🥏</span>
+              </div>
+              <span className="font-bold text-xl text-foreground">DiscGolfOdds.com</span>
+            </Link>
+
+            <div className="hidden md:flex items-center space-x-8">
+              <Link href="/odds" className="text-foreground hover:text-primary transition-colors">
+                Live Odds
+              </Link>
+              <Link href="/guides" className="text-foreground hover:text-primary transition-colors">
+                Betting Guides
+              </Link>
+              <Link href="/retailers" className="text-foreground hover:text-primary transition-colors">
+                Disc Retailers
+              </Link>
+              <Link href="/events" className="text-foreground hover:text-primary transition-colors">
+                Events
+              </Link>
+              <Link href="/news" className="text-primary font-medium">
+                News
+              </Link>
+            </div>
+
+            <Button asChild size="sm" className="hidden md:inline-flex">
+              <Link href="/retailers">🛒 Shop Discs</Link>
+            </Button>
+          </div>
+        </div>
+      </nav>
+
       {/* Header */}
       <div className="bg-gradient-to-r from-primary/10 to-secondary/10 py-12">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl font-bold text-foreground mb-4">Disc Golf Betting News & Updates</h1>
+            <h1 className="text-4xl font-bold text-foreground mb-4">📰 Disc Golf Betting News & Updates</h1>
             <p className="text-xl text-muted-foreground">
               Stay informed with the latest disc golf betting insights, tournament analysis, and player updates
             </p>
@@ -108,11 +144,18 @@ export default function NewsPage() {
       </div>
 
       <div className="container mx-auto px-4 py-12">
+        {/* Live Disc Golf News section */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
+            <Rss className="h-6 w-6 text-primary" />🔴 Live Disc Golf News
+          </h2>
+          <LiveNewsSection />
+        </section>
+
         {/* Featured Articles */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
-            <TrendingUp className="h-6 w-6 text-primary" />
-            Featured Stories
+            <TrendingUp className="h-6 w-6 text-primary" />🏆 Featured Stories
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {featuredArticles.map((article) => (
@@ -166,7 +209,7 @@ export default function NewsPage() {
 
         {/* Regular Articles */}
         <section>
-          <h2 className="text-2xl font-bold text-foreground mb-6">Latest Articles</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-6">📚 Latest Articles</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {regularArticles.map((article) => (
               <Card key={article.id} className="overflow-hidden hover:shadow-lg transition-shadow">
@@ -207,7 +250,7 @@ export default function NewsPage() {
 
         {/* Newsletter Signup */}
         <section className="mt-16 bg-primary/5 rounded-lg p-8 text-center">
-          <h3 className="text-2xl font-bold text-foreground mb-4">Stay Updated</h3>
+          <h3 className="text-2xl font-bold text-foreground mb-4">📧 Stay Updated</h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             Get the latest disc golf betting news, tournament previews, and exclusive betting tips delivered to your
             inbox.
@@ -224,12 +267,12 @@ export default function NewsPage() {
 
         {/* Coolbet CTA */}
         <section className="mt-12 bg-gradient-to-r from-primary to-secondary rounded-lg p-8 text-center text-primary-foreground">
-          <h3 className="text-2xl font-bold mb-4">Ready to Bet on Disc Golf?</h3>
+          <h3 className="text-2xl font-bold mb-4">🛒 Ready to Get Your Discs?</h3>
           <p className="mb-6 opacity-90">
-            Join Coolbet today and get your exclusive welcome bonus to start betting on disc golf tournaments.
+            Check out the best disc golf retailers in Canada and USA with fast shipping and great selection.
           </p>
           <Button asChild size="lg" variant="secondary">
-            <Link href="/bonuses">Claim Your Bonus</Link>
+            <Link href="/retailers">View Disc Retailers</Link>
           </Button>
         </section>
       </div>

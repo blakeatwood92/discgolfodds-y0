@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, TrendingUp, Users, BookOpen, Zap, Target, Trophy } from "lucide-react"
+import DiscGolfNews from "@/components/disc-golf-news"
 
 export default function HomePage() {
   return (
@@ -27,6 +28,12 @@ export default function HomePage() {
                 className="text-muted-foreground hover:text-primary font-serif transition-colors duration-200"
               >
                 Betting Guides
+              </a>
+              <a
+                href="/news"
+                className="text-muted-foreground hover:text-primary font-serif transition-colors duration-200"
+              >
+                News
               </a>
               <a
                 href="/retailers"
@@ -154,14 +161,166 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 bg-background relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-card to-muted relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-5"
           style={{
-            backgroundImage: `url('/placeholder-k03bg.png')`,
+            backgroundImage: `url('/disc-golf-forest-throw.png')`,
           }}
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <Badge className="bg-secondary/10 text-secondary border-secondary/20 font-serif text-sm px-4 py-2 mb-4">
+              📰 Latest News
+            </Badge>
+            <h2 className="text-4xl font-bold font-sans text-foreground mb-6">Live Disc Golf News</h2>
+            <p className="text-xl font-serif text-muted-foreground max-w-2xl mx-auto">
+              Stay updated with the latest disc golf news, tournament results, and player updates
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <DiscGolfNews q="disc golf" />
+          </div>
+
+          <div className="text-center mt-12">
+            <Button
+              variant="outline"
+              className="border-2 border-primary text-primary hover:bg-primary hover:text-white font-serif text-lg px-8 py-3 bg-transparent"
+              asChild
+            >
+              <a href="/news">
+                View All News <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-800 border-t border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <Badge className="bg-primary/10 text-primary border-primary/20 font-serif text-sm px-4 py-2 mb-4">
+              📊 Platform Stats
+            </Badge>
+            <h2 className="text-4xl font-bold font-sans text-foreground mb-6">🏆 Trusted by Disc Golf Bettors</h2>
+            <p className="text-xl font-serif text-muted-foreground max-w-2xl mx-auto">
+              Join thousands of players who trust our expert analysis and live odds
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
+            {[
+              { number: "50K+", label: "Monthly Users", icon: Users, emoji: "👥" },
+              { number: "95%", label: "Accuracy Rate", icon: Target, emoji: "🎯" },
+              { number: "24/7", label: "Live Updates", icon: Zap, emoji: "⚡" },
+              { number: "100+", label: "Tournaments Covered", icon: Trophy, emoji: "🏆" },
+            ].map((stat, index) => (
+              <div key={index} className="text-center group">
+                <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-border group-hover:shadow-xl transition-all duration-300">
+                  <div className="bg-gradient-to-br from-primary to-secondary rounded-xl p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                    <stat.icon className="h-8 w-8 text-white" />
+                  </div>
+                  <div className="text-3xl font-bold font-sans text-foreground mb-2">{stat.number}</div>
+                  <div className="text-muted-foreground font-serif">
+                    {stat.emoji} {stat.label}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-border text-center">
+            <h3 className="text-2xl font-bold font-sans text-foreground mb-4">💰 Ready to Start Betting?</h3>
+            <p className="text-muted-foreground font-serif mb-6 max-w-2xl mx-auto">
+              Get exclusive access to live odds, expert analysis, and betting strategies from the disc golf pros. 🎯
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary-90 font-serif text-lg px-8 py-3"
+                asChild
+              >
+                <a href="https://coolbet.com" target="_blank" rel="noopener noreferrer">
+                  💳 Start Betting on Coolbet
+                </a>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-primary text-primary hover:bg-primary hover:text-white font-serif text-lg px-8 py-3 bg-transparent"
+                asChild
+              >
+                <a href="/odds">View Live Odds</a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-800 border-t border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <Badge className="bg-primary/10 text-primary border-primary/20 font-serif text-sm px-4 py-2 mb-4">
+              🎯 Featured Markets
+            </Badge>
+            <h2 className="text-4xl font-bold font-sans text-foreground mb-6">Live Disc Golf Odds</h2>
+            <p className="text-xl font-serif text-muted-foreground max-w-2xl mx-auto">
+              Real-time betting odds from upcoming DGPT events with instant updates
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { player: "Paul McBeth", odds: "+250", event: "DGPT Championship", trend: "up", change: "+15" },
+              { player: "Ricky Wysocki", odds: "+300", event: "DGPT Championship", trend: "down", change: "-10" },
+              { player: "Calvin Heimburg", odds: "+400", event: "DGPT Championship", trend: "up", change: "+25" },
+            ].map((odd, index) => (
+              <Card
+                key={index}
+                className="bg-card border-2 border-border card-hover-effect group cursor-pointer overflow-hidden"
+              >
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary" />
+                <CardHeader className="pb-4">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <CardTitle className="font-sans text-card-foreground text-xl group-hover:text-primary transition-colors">
+                        {odd.player}
+                      </CardTitle>
+                      <CardDescription className="font-serif text-base">{odd.event}</CardDescription>
+                    </div>
+                    <div className="text-right">
+                      <Badge
+                        variant={odd.trend === "up" ? "default" : "secondary"}
+                        className={`font-serif text-sm ${odd.trend === "up" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
+                      >
+                        <TrendingUp className={`h-4 w-4 mr-1 ${odd.trend === "down" ? "rotate-180" : ""}`} />
+                        {odd.odds}
+                      </Badge>
+                      <p className={`text-xs mt-1 ${odd.trend === "up" ? "text-green-600" : "text-red-600"}`}>
+                        {odd.change}
+                      </p>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <Button
+                    className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary-90 font-serif text-lg py-3 transition-all duration-300"
+                    asChild
+                  >
+                    <a href="https://coolbet.com" target="_blank" rel="noopener noreferrer">
+                      Bet on Coolbet
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-800 border-t border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <Badge className="bg-secondary/10 text-secondary border-secondary/20 font-serif text-sm px-4 py-2 mb-4">
               📚 Learn & Win
