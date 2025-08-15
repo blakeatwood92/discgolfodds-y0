@@ -118,6 +118,9 @@ export default function EventsPage() {
               <Link href="/events" className="text-primary font-serif">
                 Events
               </Link>
+              <Link href="/retailers" className="text-muted-foreground hover:text-foreground font-serif">
+                Disc Retailers
+              </Link>
               <Link href="/bonuses" className="text-muted-foreground hover:text-foreground font-serif">
                 Coolbet Bonuses
               </Link>
@@ -333,6 +336,16 @@ export default function EventsPage() {
           <Button size="lg" variant="secondary" className="bg-white text-accent hover:bg-white/90 font-serif" asChild>
             <Link href="/bonuses">
               Claim $40 Bonus <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
+          <Button
+            size="lg"
+            variant="secondary"
+            className="bg-white text-accent hover:bg-white/90 font-serif mt-4"
+            asChild
+          >
+            <Link href="/retailers">
+              View Disc Retailers <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
         </div>

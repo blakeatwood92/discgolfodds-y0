@@ -22,14 +22,14 @@ export default function GuidesPage() {
               </Link>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/#odds" className="text-muted-foreground hover:text-foreground font-serif">
+              <Link href="/odds" className="text-muted-foreground hover:text-foreground font-serif">
                 Live Odds
               </Link>
               <Link href="/guides" className="text-primary font-serif">
                 Betting Guides
               </Link>
-              <Link href="/bonuses" className="text-muted-foreground hover:text-foreground font-serif">
-                Coolbet Bonuses
+              <Link href="/retailers" className="text-muted-foreground hover:text-foreground font-serif">
+                Disc Retailers
               </Link>
             </div>
           </div>
@@ -195,8 +195,8 @@ export default function GuidesPage() {
             Put your knowledge to work with our exclusive Coolbet welcome bonus
           </p>
           <Button size="lg" variant="secondary" className="bg-white text-accent hover:bg-white/90 font-serif" asChild>
-            <Link href="/bonuses">
-              Claim Your $40 Bonus <ArrowRight className="ml-2 h-5 w-5" />
+            <Link href="/retailers">
+              View Disc Retailers <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
         </div>

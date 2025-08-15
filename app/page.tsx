@@ -17,13 +17,13 @@ export default function HomePage() {
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <a
-                href="#odds"
+                href="/odds"
                 className="text-muted-foreground hover:text-primary font-serif transition-colors duration-200"
               >
                 Live Odds
               </a>
               <a
-                href="#guides"
+                href="/guides"
                 className="text-muted-foreground hover:text-primary font-serif transition-colors duration-200"
               >
                 Betting Guides
@@ -35,7 +35,7 @@ export default function HomePage() {
                 Disc Retailers
               </a>
               <a
-                href="#events"
+                href="/events"
                 className="text-muted-foreground hover:text-primary font-serif transition-colors duration-200"
               >
                 Events
@@ -308,12 +308,12 @@ export default function HomePage() {
               <h4 className="font-semibold font-sans text-white mb-6 text-lg">Betting Guides</h4>
               <ul className="space-y-3 font-serif text-slate-300">
                 <li>
-                  <a href="#" className="hover:text-primary transition-colors duration-200">
+                  <a href="/guides/how-to-bet" className="hover:text-primary transition-colors duration-200">
                     How to Bet on Disc Golf
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary transition-colors duration-200">
+                  <a href="/guides/odds-explained" className="hover:text-primary transition-colors duration-200">
                     Odds Explained
                   </a>
                 </li>
@@ -328,17 +328,17 @@ export default function HomePage() {
               <h4 className="font-semibold font-sans text-white mb-6 text-lg">Live Odds</h4>
               <ul className="space-y-3 font-serif text-slate-300">
                 <li>
-                  <a href="#" className="hover:text-primary transition-colors duration-200">
+                  <a href="/events" className="hover:text-primary transition-colors duration-200">
                     DGPT Events
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary transition-colors duration-200">
+                  <a href="/tournaments" className="hover:text-primary transition-colors duration-200">
                     Major Championships
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary transition-colors duration-200">
+                  <a href="/odds" className="hover:text-primary transition-colors duration-200">
                     Player Props
                   </a>
                 </li>

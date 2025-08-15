@@ -20,7 +20,7 @@ export default function NotFound() {
             <CardTitle className="font-sans">What you can do:</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               <Button asChild variant="outline" className="h-auto p-4 font-serif bg-transparent">
                 <Link href="/" className="flex flex-col items-center space-y-2">
                   <Home className="h-6 w-6" />
@@ -39,6 +39,12 @@ export default function NotFound() {
                   <span>Betting Guides</span>
                 </Link>
               </Button>
+              <Button asChild variant="outline" className="h-auto p-4 font-serif bg-transparent">
+                <Link href="/retailers" className="flex flex-col items-center space-y-2">
+                  <Search className="h-6 w-6" />
+                  <span>Disc Retailers</span>
+                </Link>
+              </Button>
             </div>
           </CardContent>
         </Card>
@@ -51,7 +57,7 @@ export default function NotFound() {
             While you're here, check out our exclusive Coolbet bonus offer
           </p>
           <Button asChild className="bg-primary hover:bg-primary/90 font-serif">
-            <Link href="/bonuses">Claim $40 Bonus</Link>
+            <Link href="/retailers">View Disc Retailers</Link>
           </Button>
         </div>
       </div>
